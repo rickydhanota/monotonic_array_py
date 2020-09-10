@@ -6,7 +6,14 @@
 # Sample output is true
 
 def isMonotonic(array):
-    array.sort() #-9001, -1102, -1101, -1100, -10, -5, -1
-    
+    isNonDecreasing = True
+    isNonIncreasing = True
+    for i in range(1, len(array)):
+        if array [i] < array[i-1]:
+            isNonDecreasing = False
+        if array[i] > array[i-1]:
+            isNonIncreasing = False
+    return isNonDecreasing or isNonIncreasing
+
 
 print(isMonotonic([-1, -5, -10, -1100, -1101, -1102, -9001]))
